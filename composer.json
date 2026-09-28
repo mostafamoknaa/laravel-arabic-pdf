@@ -1,0 +1,68 @@
+{
+    "name": "mostafamoknaa/laravel-arabic-pdf",
+    "description": "Generate PDFs with correct Arabic text in Laravel: connected letters (glyph shaping), right-to-left word order (bidi) and RTL tables, built on dompdf.",
+    "keywords": [
+        "laravel",
+        "pdf",
+        "arabic",
+        "arabic-pdf",
+        "rtl",
+        "bidi",
+        "dompdf",
+        "persian",
+        "farsi",
+        "glyphs",
+        "shaping"
+    ],
+    "type": "library",
+    "license": "MIT",
+    "homepage": "https://github.com/mostafamoknaa/laravel-arabic-pdf",
+    "authors": [
+        {
+            "name": "Mostafa Moknaa",
+            "email": "Mostafamokna78@gmail.com"
+        }
+    ],
+    "require": {
+        "php": "^8.1",
+        "ext-dom": "*",
+        "ext-mbstring": "*",
+        "dompdf/dompdf": "^2.0|^3.0",
+        "illuminate/http": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/view": "^10.0|^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0|^11.0",
+        "phpunit/phpunit": "^10.5|^11.0|^12.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "MostafaMoknaa\\ArabicPdf\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "MostafaMoknaa\\ArabicPdf\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "MostafaMoknaa\\ArabicPdf\\ArabicPdfServiceProvider"
+            ],
+            "aliases": {
+                "ArabicPdf": "MostafaMoknaa\\ArabicPdf\\Facades\\ArabicPdf",
+                "Arabic": "MostafaMoknaa\\ArabicPdf\\Facades\\Arabic"
+            }
+        }
+    },
+    "scripts": {
+        "test": "phpunit"
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "stable",
+    "prefer-stable": true
+}
