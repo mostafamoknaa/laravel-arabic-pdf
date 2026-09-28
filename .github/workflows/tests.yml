@@ -39,7 +39,12 @@ jobs:
           extensions: dom, mbstring, gd
           coverage: none
 
+      # Laravel 10 and 11 are end-of-life and every release has open advisories,
+      # which Composer refuses to install by default.
       - name: Install dependencies
+        env:
+          COMPOSER_NO_BLOCKING: 1
+          COMPOSER_NO_SECURITY_BLOCKING: 1
         run: |
           composer require "illuminate/support:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --prefer-dist --no-interaction --no-progress
